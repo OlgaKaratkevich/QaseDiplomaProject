@@ -1,22 +1,20 @@
-package api;
-
+package tests.api;
 
 import generators.ProjectGenerator;
 import org.junit.jupiter.api.Test;
 import api.pojos.request.project.CreateProjectRequest;
 import api.pojos.response.project.CreateProjectResponse;
 import api.pojos.response.project.Result;
-import api.steps.ProjectSteps;
+import steps.ProjectSteps;
 
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ProjectApiTest {
 
     @Test
-    void projectShouldBeCreated(){
+    void projectShouldBeCreated() {
         CreateProjectRequest createProjectRq = ProjectGenerator.createProjectApi();
         CreateProjectResponse createProjectRs = ProjectSteps.createProject(createProjectRq);
-
         assertThat(createProjectRs)
                 .isNotNull()
                 .extracting(CreateProjectResponse::getResult)
@@ -24,3 +22,4 @@ public class ProjectApiTest {
                 .isEqualTo(createProjectRq.getCode());
     }
 }
+

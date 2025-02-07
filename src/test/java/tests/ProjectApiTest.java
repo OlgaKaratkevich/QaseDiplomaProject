@@ -1,4 +1,4 @@
-package tests.api;
+package tests;
 
 import generators.ProjectGenerator;
 import org.junit.jupiter.api.Test;

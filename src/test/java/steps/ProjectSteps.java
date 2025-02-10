@@ -1,10 +1,10 @@
 package steps;
 
-import api.pojos.response.project.CreateProjectResponse;
-import api.pojos.request.project.CreateProjectRequest;
+import tests.api.pojos.response.project.CreateProjectResponse;
+import tests.api.pojos.request.project.CreateProjectRequest;
 
-import static api.specs.Specs.REQ_SPEC;
-import static api.specs.Specs.RES_SPEC;
+import static tests.api.specs.Specs.REQ_SPEC;
+import static tests.api.specs.Specs.RES_SPEC;
 import static io.restassured.RestAssured.given;
 
 public class ProjectSteps {

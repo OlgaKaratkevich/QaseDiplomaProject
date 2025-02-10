@@ -1,5 +1,5 @@
 
-package api.pojos.request.project;
+package tests.api.pojos.request.project;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

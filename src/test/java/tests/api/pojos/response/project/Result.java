@@ -1,4 +1,4 @@
-package api.pojos.response.project;
+package tests.api.pojos.response.project;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,8 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class DeleteProjectResponse {
+public class Result {
 
-    private boolean status;
-    private String errorMessage;
+    public String code;
 }

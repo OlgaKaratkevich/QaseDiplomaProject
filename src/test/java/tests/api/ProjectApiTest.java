@@ -1,10 +1,10 @@
-package tests;
+package tests.api;
 
 import generators.ProjectGenerator;
 import org.junit.jupiter.api.Test;
-import api.pojos.request.project.CreateProjectRequest;
-import api.pojos.response.project.CreateProjectResponse;
-import api.pojos.response.project.Result;
+import tests.api.pojos.request.project.CreateProjectRequest;
+import tests.api.pojos.response.project.CreateProjectResponse;
+import tests.api.pojos.response.project.Result;
 import steps.ProjectSteps;
 
 import static org.assertj.core.api.Assertions.assertThat;

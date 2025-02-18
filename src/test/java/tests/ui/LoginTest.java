@@ -6,6 +6,7 @@ import tests.BaseTest;
 
 public class LoginTest extends BaseTest {
 
+
     @Test
     public void userShouldBeLoggedInUsingValidData(){
         loginPage.openLoginPage();

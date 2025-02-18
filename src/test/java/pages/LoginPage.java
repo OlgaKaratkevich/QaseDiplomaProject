@@ -29,10 +29,6 @@ public class LoginPage extends BasePage {
         PASSWORD_INPUT.sendKeys(password);
     }
 
-    @Step("Click submit")
-    public void clickSubmit() {
-        PASSWORD_INPUT.submit();
-    }
 
     @Step("Click sign in button")
     public void clickSignInButton() {

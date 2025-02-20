@@ -11,7 +11,8 @@ public class LoginPage extends BasePage {
     private final SelenideElement LOGIN_INPUT = $("[name=email]");
     private final SelenideElement PASSWORD_INPUT = $("[name=password]");
     private final SelenideElement SIGN_IN_BUTTON = $x("//button[@type='submit']");
-    private final ElementsCollection ERROR_MESSAGE = $$x("//div[@role='alert']/span/span");
+    private final ElementsCollection ERROR_MESSAGE = $$x("//small[@class = 'f75Cb_']");
+    private final ElementsCollection ALERT_MESSAGE = $$x("//div[@role='alert']/span/span");
 
 
     @Step("Open login Page")
@@ -39,6 +40,11 @@ public class LoginPage extends BasePage {
     @Step("Get error message")
     public String getErrorMessage() {
         return ERROR_MESSAGE.getFirst().getText();
+    }
+
+    @Step("Get alert message")
+    public String getAlertMessage() {
+        return ALERT_MESSAGE.getFirst().getText();
     }
 
     @Override

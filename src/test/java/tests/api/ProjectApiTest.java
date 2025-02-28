@@ -15,11 +15,15 @@ public class ProjectApiTest {
     void projectShouldBeCreated() {
         CreateProjectRequest createProjectRq = ProjectGenerator.createProjectApi();
         CreateProjectResponse createProjectRs = ProjectSteps.createProject(createProjectRq);
+
         assertThat(createProjectRs)
                 .isNotNull()
                 .extracting(CreateProjectResponse::getResult)
                 .extracting(Result::getCode)
                 .isEqualTo(createProjectRq.getCode());
+
+        ProjectGenerator.deleteProjectApi(createProjectRq.getCode());
+
     }
 }
 

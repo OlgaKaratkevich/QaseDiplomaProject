@@ -26,6 +26,7 @@ public class ProjectPage extends BasePage{
     @Step("Input project data")
     public void inputProjectData(CreateProjectRequest project){
         PROJECT_NAME_INPUT.sendKeys(project.getTitle());
+        PROJECT_CODE_INPUT.clear();
         PROJECT_CODE_INPUT.sendKeys(project.getCode());
         clickButton("Create project");
     }

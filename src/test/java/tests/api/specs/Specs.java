@@ -11,11 +11,11 @@ import static org.apache.http.HttpStatus.SC_OK;
 
 public class Specs {
     public static final RequestSpecification REQ_SPEC = with()
-            .baseUri("https://app.qase.io")
+            .baseUri("https://api.qase.io")
             .basePath("/v1")
             .log().uri()
             .contentType(JSON)
-            .header("Token","a5af53344aef7a2ed241190e582de98ab5028825db09b4f0a9d29c4f2ced66d7");
+            .header("Token","f7b98ac70175c7696994278ef2d6557dd096398035499f5c01d84418cce6b8a2");
 
     public static final ResponseSpecification RES_SPEC = new ResponseSpecBuilder()
             .log(LogDetail.ALL)

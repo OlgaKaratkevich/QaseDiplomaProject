@@ -1,14 +1,10 @@
 package tests.ui;
 
 import generators.ProjectGenerator;
-import io.qameta.allure.*;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.BaseTest;
 import tests.api.pojos.request.project.CreateProjectRequest;
-import steps.ProjectSteps;
-import pages.ProjectPage;
 
 import static generators.ProjectGenerator.createProjectApi;
 

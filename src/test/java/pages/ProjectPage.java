@@ -1,16 +1,13 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import pages.elements.*;
 import tests.api.pojos.request.project.CreateProjectRequest;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
-
-import static pages.elements.Button.*;
+import static pages.elements.Button.clickButton;
 
 public class ProjectPage extends BasePage{
 

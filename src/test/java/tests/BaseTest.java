@@ -14,7 +14,6 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 public class BaseTest {
     protected LoginPage loginPage = new LoginPage();
     protected ProjectPage projectPage = new ProjectPage();
-    protected ProjectGenerator projectGenerator = new ProjectGenerator();
 
     @BeforeAll
     static void setUp() {

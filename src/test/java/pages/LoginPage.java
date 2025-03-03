@@ -26,7 +26,7 @@ public class LoginPage extends BasePage {
     }
 
     @Step("Input password")
-    public void inputPass(String password) {
+    public void inputPassword(String password) {
         PASSWORD_INPUT.sendKeys(password);
     }
 
@@ -42,10 +42,6 @@ public class LoginPage extends BasePage {
         return ERROR_MESSAGE.getFirst().getText();
     }
 
-    @Step("Get alert message")
-    public String getAlertMessage() {
-        return ALERT_MESSAGE.getFirst().getText();
-    }
 
     @Override
     @Step("Check if Login page is open")

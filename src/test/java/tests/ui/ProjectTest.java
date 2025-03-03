@@ -20,7 +20,7 @@ public class ProjectTest extends BaseTest {
     public void createProjectTest() {
         loginPage.openLoginPage();
         loginPage.inputLogin("roxeve9247@fenxz.com");
-        loginPage.inputPass("AsdQwerty123!");
+        loginPage.inputPassword("AsdQwerty123!");
         loginPage.clickSignInButton();
         projectPage.clickCreateNewProjectButton();
         CreateProjectRequest project = createProjectApi();
@@ -41,7 +41,7 @@ public class ProjectTest extends BaseTest {
     void authNegativeTests(String title, String code, String errorText) {
         loginPage.openLoginPage();
         loginPage.inputLogin("roxeve9247@fenxz.com");
-        loginPage.inputPass("AsdQwerty123!");
+        loginPage.inputPassword("AsdQwerty123!");
         loginPage.clickSignInButton();
         projectPage.clickCreateNewProjectButton();
         projectPage.inputProjectTitle(title);

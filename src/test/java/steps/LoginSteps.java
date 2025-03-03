@@ -9,7 +9,7 @@ public class LoginSteps {
     @Step("Get authorized")
     public void authorize(String login, String pass){
         loginPage.inputLogin(login);
-        loginPage.inputPass(pass);
+        loginPage.inputPassword(pass);
         loginPage.clickSignInButton();
     }
 }

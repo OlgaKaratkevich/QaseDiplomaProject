@@ -45,7 +45,6 @@ public class ProjectPage extends BasePage{
         PROJECT_NAME_INPUT.sendKeys(title);
     }
 
-
     @Step("Input project code")
     public void inputProjectCode(String code){
         PROJECT_CODE_INPUT.clear();
@@ -54,7 +53,7 @@ public class ProjectPage extends BasePage{
 
     @Step("Project code error should be seen")
     public void projectErrorIsVisible(String errorText) {
-        PROJECT_CODE_ERROR.shouldBe(visible);
+        PROJECT_CODE_ERROR.shouldBe(Condition.text(errorText));
     }
 
     @Step("Check if Project page is open")

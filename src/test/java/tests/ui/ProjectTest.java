@@ -1,5 +1,6 @@
 package tests.ui;
 
+import config.ConfigReader;
 import generators.ProjectGenerator;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -19,8 +20,8 @@ public class ProjectTest extends BaseTest {
     @Test
     public void createProjectTest() {
         loginPage.openLoginPage();
-        loginPage.inputLogin("roxeve9247@fenxz.com");
-        loginPage.inputPassword("AsdQwerty123!");
+        loginPage.inputLogin(ConfigReader.userConfig.email());
+        loginPage.inputPassword(ConfigReader.userConfig.password());
         loginPage.clickSignInButton();
         projectPage.clickCreateNewProjectButton();
         CreateProjectRequest project = createProjectApi();
@@ -40,8 +41,8 @@ public class ProjectTest extends BaseTest {
     @ParameterizedTest(name = "Auth negative login  tests")
     void authNegativeTests(String title, String code, String errorText) {
         loginPage.openLoginPage();
-        loginPage.inputLogin("roxeve9247@fenxz.com");
-        loginPage.inputPassword("AsdQwerty123!");
+        loginPage.inputLogin(ConfigReader.userConfig.email());
+        loginPage.inputPassword(ConfigReader.userConfig.password());
         loginPage.clickSignInButton();
         projectPage.clickCreateNewProjectButton();
         projectPage.inputProjectTitle(title);

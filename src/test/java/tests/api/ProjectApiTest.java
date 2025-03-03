@@ -23,7 +23,6 @@ public class ProjectApiTest {
                 .isEqualTo(createProjectRq.getCode());
 
         ProjectGenerator.deleteProjectApi(createProjectRq.getCode());
-
     }
 }
 

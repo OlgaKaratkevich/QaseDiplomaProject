@@ -59,4 +59,9 @@ public class ProjectPage extends BasePage{
     public void pageIsOpen() {
         PROJECT_PAGE_TITLE.shouldHave(text("Projects"));
     }
+
+    @Step("Check if Project is open")
+    public void projectIsOpen(String code) {
+        PROJECT_PAGE_TITLE.shouldHave(text(code));
+    }
 }

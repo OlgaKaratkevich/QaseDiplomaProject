@@ -26,7 +26,7 @@ public class ProjectTest extends BaseTest {
         projectPage.clickCreateNewProjectButton();
         CreateProjectRequest project = createProjectApi();
         projectPage.inputProjectData(project);
-        projectPage.pageIsOpen();
+        projectPage.projectIsOpen(project.getCode());
         ProjectGenerator.deleteProjectApi(project.getCode());
     }
 

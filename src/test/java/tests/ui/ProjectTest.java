@@ -2,6 +2,9 @@ package tests.ui;
 
 import config.ConfigReader;
 import generators.ProjectGenerator;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -18,6 +21,8 @@ import static generators.ProjectGenerator.createProjectApi;
 public class ProjectTest extends BaseTest {
 
     @Test
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("User should create new project using valid project name and code")
     public void createProjectTest() {
         loginPage.openLoginPage();
         loginPage.inputLogin(ConfigReader.userConfig.email());
@@ -28,6 +33,23 @@ public class ProjectTest extends BaseTest {
         projectPage.inputProjectData(project);
         projectPage.projectIsOpen(project.getCode());
         ProjectGenerator.deleteProjectApi(project.getCode());
+    }
+
+    @Test
+    @Severity(SeverityLevel.CRITICAL)
+    @DisplayName("User should delete expected project by code")
+    public void deleteProjectTest() {
+        loginPage.openLoginPage();
+        loginPage.inputLogin(ConfigReader.userConfig.email());
+        loginPage.inputPassword(ConfigReader.userConfig.password());
+        loginPage.clickSignInButton();
+        projectPage.clickCreateNewProjectButton();
+        CreateProjectRequest project = createProjectApi();
+        projectPage.inputProjectData(project);
+        projectPage.openProjectPage();
+        projectPage.clickActionMenu(project.getCode());
+        projectPage.clickDeleteButton();
+
     }
 
     static Stream<Arguments> projectNegativeTests() {

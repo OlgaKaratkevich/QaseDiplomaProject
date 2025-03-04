@@ -9,8 +9,7 @@ import tests.api.pojos.request.project.CreateProjectRequest;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.*;
 import static pages.elements.Button.clickButton;
 import static pages.elements.Input.setValueInInput;
 
@@ -18,8 +17,11 @@ public class ProjectPage extends BasePage{
 
 
     private final SelenideElement PROJECT_PAGE_TITLE = $x("//div[@id='application-content']//h1");
-    private final SelenideElement PROJECT_NAME_INPUT = $("#project-name");
-    private final SelenideElement PROJECT_CODE_INPUT = $("#project-code");
+
+    @Step("Open project page")
+    public void openProjectPage(){
+    open("https://app.qase.io/projects");
+    }
 
     @Step("Click create new project button")
     public void clickCreateNewProjectButton(){
@@ -63,5 +65,21 @@ public class ProjectPage extends BasePage{
     @Step("Check if Project is open")
     public void projectIsOpen(String code) {
         PROJECT_PAGE_TITLE.shouldHave(text(code));
+    }
+
+    @Step("Click action menu of {} project")
+    public void clickActionMenu(String code){
+        $x("//a[text()='"+code+"']/ancestor::tr//button/span/.").click();
+    }
+
+    @Step("Click delete button")
+    public void clickDeleteButton(){
+        $x("//div[@data-testid ='remove']").click();
+
+    }
+
+    @Step("Check if projected is deleted")
+    public void checkIfProjectIsDeleted(String code){
+        boolean exists = $x("//a[text()='" + code + "']").exists();
     }
 }

@@ -77,9 +77,4 @@ public class ProjectPage extends BasePage{
         $x("//div[@data-testid ='remove']").click();
 
     }
-
-    @Step("Check if projected is deleted")
-    public void checkIfProjectIsDeleted(String code){
-        boolean exists = $x("//a[text()='" + code + "']").exists();
-    }
 }

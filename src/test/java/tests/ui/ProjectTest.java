@@ -49,7 +49,6 @@ public class ProjectTest extends BaseTest {
         projectPage.openProjectPage();
         projectPage.clickActionMenu(project.getCode());
         projectPage.clickDeleteButton();
-
     }
 
     static Stream<Arguments> projectNegativeTests() {
@@ -60,7 +59,7 @@ public class ProjectTest extends BaseTest {
     }
 
     @MethodSource("projectNegativeTests")
-    @ParameterizedTest(name = "Auth negative login  tests")
+    @ParameterizedTest(name = "Authentication negative login  tests")
     void authNegativeTests(String title, String code, String errorText) {
         loginPage.openLoginPage();
         loginPage.inputLogin(ConfigReader.userConfig.email());
